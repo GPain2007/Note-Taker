@@ -1,7 +1,12 @@
 const router = require("express").Router();
 
 router.get("/notes", (req, res) => {
-  res.send("API GET Route hit");
+  const result = getNoteById(req.params.title, notes);
+  if (result) {
+    res.json(result);
+  } else {
+    res.send(404);
+  }
 });
 
 router.post("/notes", (req, res) => {
