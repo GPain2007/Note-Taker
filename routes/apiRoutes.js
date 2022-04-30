@@ -1,6 +1,13 @@
 const router = require("express").Router();
 const store = require("../db/Store");
-const express = require("express");
+// const express = require("express");
+// const res = require("express/lib/response");
+
+router.get("/", (req, res) => {
+  store.read().then((notes) => {
+    return res.json(notes);
+  });
+});
 
 router.get("/notes", (req, res) => {
   store
