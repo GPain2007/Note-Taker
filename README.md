@@ -1,5 +1,8 @@
 # Note Taker Starter Code
 
+ https://polar-ocean-59524.herokuapp.com
+ https://github.com/GPain2007/Note-Taker
+ 
 Note Taker is able to save Notes taken by the user.
  
  
