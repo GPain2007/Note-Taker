@@ -24,7 +24,9 @@ class Store {
       })
       .catch();
   }
-
+  write(notes) {
+    return writeFileAsync("db/db.json", JSON.stringify(notes));
+  }
   addNote(note) {
     const { title, text } = note;
 
@@ -34,13 +36,13 @@ class Store {
     };
     return this.getNotes()
       .then((notes) => [...notes, newNote])
-      .then((updatedNotes) => write(updatedNotes))
+      .then((updatedNotes) => this.write(updatedNotes))
       .then(() => newNote);
   }
 
-  write(notes) {
-    return writeFileAsync("db/db.json", JSON.stringify(notes));
-  }
+  // getlastid(){
+  //   for(i=)
+  // }
 
   removeNote(id) {
     return this.getNotes().then((notes) =>

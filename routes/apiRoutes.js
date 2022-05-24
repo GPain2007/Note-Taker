@@ -25,7 +25,7 @@ router.post("/notes", (req, res) => {
     .catch((err) => console.error(err));
 });
 
-router.delete("/note/:id", (req, res) => {
+router.delete("/notes/:id", (req, res) => {
   store
     .removeNote(req.params.id)
     .then(() => res.json({ message: `${req.params.id} note was  deleted` }))
